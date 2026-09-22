@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dream Girl Shop BY CAROLINA AGREDO</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="topbar">🚚 Envíos a todo el país</div>
+
+  <header>
+    <a class="logo" href="#">The Dream Girl <small>SHOP</small></a>
+    <div class="search">
+      <input id="search" type="search" placeholder="Buscar productos...">
+      <span>⌕</span>
+    </div>
+    <div class="actions">
+      <button title="Cuenta">♙</button>
+      <button title="Favoritos">♡</button>
+      <button id="cartButton" title="Carrito">🛒 <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#categorias">Categorías</a>
+    <a href="#productos">Productos</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div>
+        <p class="eyebrow">THE DREAM GIRL SHOP BY CAROLINA AGREGO</p>
+        <h1>Porque cada detalle<br>hace la diferencia.</h1>
+        <p>Moda, belleza y accesorios en un solo lugar.</p>
+        <a class="btn" href="#productos">Ver catálogo →</a>
+      </div>
+      <div class="hero-card">
+        <span>♡</span>
+        <strong>Dream Girl</strong>
+        <small>NEW COLLECTION</small>
+      </div>
+    </section>
+
+    <section id="categorias" class="section">
+      <div class="section-head">
+        <h2>Categorías</h2>
+      </div>
+      <div id="categories" class="categories"></div>
+    </section>
+
+    <section id="productos" class="section">
+      <div class="section-head">
+        <h2 id="productTitle">Productos destacados</h2>
+        <button class="link-btn" id="showAll">Ver todo →</button>
+      </div>
+      <div id="products" class="products"></div>
+    </section>
+
+    <section id="ofertas" class="promo">
+      <div>
+        <p>DETALLES QUE ENAMORAN</p>
+        <h2>Encuentra tu próximo favorito.</h2>
+        <button class="btn" onclick="showAllProducts()">Comprar ahora →</button>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div>🚚 <b>Envíos seguros</b><span>a todo el país</span></div>
+      <div>🛡️ <b>Pagos seguros</b><span>múltiples opciones</span></div>
+      <div>♡ <b>Productos de calidad</b><span>seleccionados para ti</span></div>
+      <div>💬 <b>Atención personalizada</b><span>por WhatsApp</span></div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>¿Necesitas ayuda?</h2>
+      <p>Escríbenos y te ayudamos con tu pedido.</p>
+      <a class="btn" href="https://wa.me/573000000000" target="_blank">Hablar por WhatsApp</a>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart">
+    <div class="cart-head">
+      <h2>Tu carrito <span id="cartTitleCount">(0)</span></h2>
+      <button id="closeCart">×</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-total">
+      <div><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
+      <div><span>Domicilio</span><b id="cartDelivery">$0</b></div>
+      <div class="total"><span>Total</span><b id="cartTotal">$0</b></div>
+      <button class="btn full" id="checkoutButton">Continuar con el pedido</button>
+    </div>
+  </aside>
+
+  <div id="overlay" class="overlay"></div>
+
+  <section id="checkout" class="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeCheckout">×</button>
+      <h2>Finalizar pedido</h2>
+      <p class="muted">Completa tus datos para programar la entrega.</p>
+
+      <form id="checkoutForm">
+        <div class="form-grid">
+          <label>Nombre completo *
+            <input name="customer_name" required placeholder="Ej. Valeria Sánchez">
+          </label>
+          <label>Teléfono *
+            <input name="phone" required placeholder="Ej. 300 123 4567">
+          </label>
+          <label>Correo electrónico
+            <input name="email" type="email" placeholder="correo@ejemplo.com">
+          </label>
+          <label>Ciudad *
+            <input name="city" required value="Popayán">
+          </label>
+          <label class="wide">Dirección de entrega
+            <input name="address" placeholder="Cra 12 # 34-56">
+          </label>
+          <label>Barrio
+            <input name="neighborhood" placeholder="Ej. Centro">
+          </label>
+          <label>¿Necesita domicilio? *
+            <select name="needs_delivery" id="needsDelivery" required>
+              <option value="1">Sí</option>
+              <option value="0">No</option>
+            </select>
+          </label>
+          <label>Fecha del pedido *
+            <input name="order_date" id="orderDate" type="date" required>
+          </label>
+          <label>Fecha de entrega
+            <input name="delivery_date" id="deliveryDate" type="date">
+          </label>
+          <label class="wide">Observaciones
+            <textarea name="notes" rows="3" placeholder="Talla, color, referencia para llegar, etc."></textarea>
+          </label>
+        </div>
+        <div class="checkout-summary">
+          <span>Total del pedido</span>
+          <strong id="checkoutTotal">$0</strong>
+        </div>
+        <button class="btn full" type="submit">Realizar pedido →</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="success" class="modal">
+    <div class="modal-box success">
+      <div class="check">✓</div>
+      <h2>¡Pedido realizado!</h2>
+      <p>Tu pedido fue registrado correctamente.</p>
+      <div id="successData" class="success-data"></div>
+      <button class="btn full" id="whatsappButton">Enviar por WhatsApp</button>
+      <button class="outline full" id="continueButton">Seguir comprando</button>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <a class="logo light" href="#">The Dream Girl <small>SHOP</small></a>
+      <p>Moda, belleza y accesorios para ti.</p>
+    </div>
+    <div>
+      <h3>Enlaces</h3>
+      <a href="#inicio">Inicio</a>
+      <a href="#categorias">Categorías</a>
+      <a href="#productos">Productos</a>
+    </div>
+    <div>
+      <h3>Categorías</h3>
+      <a href="#productos">Camisas</a>
+      <a href="#productos">Perfumes</a>
+      <a href="#productos">Accesorios</a>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p>WhatsApp</p>
+      <p>Instagram</p>
+      <p>Popayán, Colombia</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
