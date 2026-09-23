@@ -182,3 +182,27 @@ WHERE category_id = 4;
 
 DELETE FROM products
 WHERE id = 4;
+
+// Relojes
+
+INSERT INTO products
+(category_id, name, description, price, stock, image, featured)
+VALUES
+
+(5, 'Reloj Casio Clásico Plateado',
+ 'Reloj digital estilo clásico con correa metálica plateada.',95000,10,'/images/relojes/Reloj1.JPG',
+ 1),
+
+(5, 'Reloj Casio Clásico Dorado',
+ 'Reloj digital estilo clásico con acabado dorado.',
+ 105000,
+ 10,
+ '/images/relojes/Reloj2.JPG',
+ 1);
+
+ SELECT id, name
+FROM products
+WHERE category_id = 5;
+
+DELETE FROM products
+WHERE id = 5;
