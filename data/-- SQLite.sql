@@ -206,3 +206,63 @@ WHERE category_id = 5;
 
 DELETE FROM products
 WHERE id = 5;
+
+// Precios 
+DELETE FROM products
+WHERE id = 1 OR id = 6;
+SELECT id, name, price
+FROM products;
+
+-- COLLARES
+UPDATE products SET price = 25000 WHERE id = 10; -- Collar Clásico Dorado
+UPDATE products SET price = 25000 WHERE id = 11; -- Collar Cadena Elegance
+UPDATE products SET price = 27000 WHERE id = 12; -- Collar Inicial Dorado
+UPDATE products SET price = 25000 WHERE id = 13; -- Collar Perlas Dream
+UPDATE products SET price = 25000 WHERE id = 14; -- Collar Medalla Premium
+
+-- ANILLOS
+UPDATE products SET price = 25000 WHERE id = 15; -- Anillo Estrella Perla
+UPDATE products SET price = 25000 WHERE id = 16; -- Anillo Corazón Rojo
+UPDATE products SET price = 25000 WHERE id = 17; -- Anillo Estrella Marina
+UPDATE products SET price = 25000 WHERE id = 18; -- Anillo Alas Doradas
+
+-- BOLSOS Y COSMETIQUERA
+UPDATE products SET price = 40000 WHERE id = 20; -- Cosmetiquera BIMBA Y LOLA
+
+-- KITS
+UPDATE products SET price = 50000 WHERE id = 21; -- Kit Victoria Secret
+UPDATE products SET price = 83000 WHERE id = 22; -- Kit Natura Tododia Ciruela
+UPDATE products SET price = 75000 WHERE id = 23; -- Kit Natura Lumina
+
+-- CREMAS
+UPDATE products SET price = 20000 WHERE id = 24; -- Crema Mango Temptation
+UPDATE products SET price = 45000 WHERE id = 25; -- Splash Natura Tododia Ciruela Negra
+UPDATE products SET price = 20000 WHERE id = 26; -- Crema Sandía Pound Cake
+UPDATE products SET price = 20000 WHERE id = 27; -- Crema Chiffon Pound Cake
+
+-- MANILLAS
+UPDATE products SET price = 25000 WHERE id = 28; -- Manilla Virgen Dorada
+UPDATE products SET price = 25000 WHERE id = 29; -- Manilla Marco Dorado
+UPDATE products SET price = 25000 WHERE id = 30; -- Manilla Corazón Multicolor
+UPDATE products SET price = 25000 WHERE id = 31; -- Manilla Virgen Premium
+UPDATE products SET price = 25000 WHERE id = 32; -- Manilla Rectangular Dorada
+UPDATE products SET price = 25000 WHERE id = 33; -- Set de Manillas Elegance
+UPDATE products SET price = 25000 WHERE id = 34; -- Manilla Marco Gold
+
+-- MEDIAS
+UPDATE products SET price = 7000 WHERE id = 35; -- Medias Chanel Clásicas
+UPDATE products SET price = 7000 WHERE id = 36; -- Medias Adidas y LV
+UPDATE products SET price = 7000 WHERE id = 37; -- Medias Chanel Collection
+UPDATE products SET price = 7000 WHERE id = 38; -- Medias Gucci Collection
+
+-- PERFUMES
+UPDATE products SET price = 30000 WHERE id = 39; -- Victoria Secret Garden View
+UPDATE products SET price = 65000 WHERE id = 40; -- Diesel 
+
+// Relojes
+UPDATE products SET price = 75000 WHERE id = 45; -- Reloj Casio Clásico Plateado
+UPDATE products SET price = 75000 WHERE id = 46; -- Reloj Casio Clásico Dorado
+
+INSERT INTO products (category_id, name, description, price, stock, image, featured)
+VALUES
+(5,'Reloj Casio Turquesa Transparente', 'Reloj digital Casio con diseño transparente y correa color turquesa.',60000,10,'/images/relojes/Reloj3.JPG',1);
