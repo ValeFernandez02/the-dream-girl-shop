@@ -267,6 +267,9 @@ INSERT INTO products (category_id, name, description, price, stock, image, featu
 VALUES
 (5,'Reloj Casio Turquesa Transparente', 'Reloj digital Casio con diseño transparente y correa color turquesa.',60000,10,'/images/relojes/Reloj3.JPG',1);
 
+UPDATE products
+SET image = '/images/relojes/Reloj3.JPG'
+WHERE id = 47;
 
 UPDATE products
 SET stock = 11
