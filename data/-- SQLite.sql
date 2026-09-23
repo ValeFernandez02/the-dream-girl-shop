@@ -265,7 +265,7 @@ UPDATE products SET price = 75000 WHERE id = 46; -- Reloj Casio Clásico Dorado
 
 INSERT INTO products (category_id, name, description, price, stock, image, featured)
 VALUES
-(5,'Reloj Casio Turquesa Transparente', 'Reloj digital Casio con diseño transparente y correa color turquesa.',60000,10,'/images/relojes/Reloj3.jpg',1);
+(5,'Reloj Casio Turquesa Transparente', 'Reloj digital Casio con diseño transparente y correa color turquesa.',60000,10,'/images/relojes/Reloj3.JPG',1);
 
 
 UPDATE products
