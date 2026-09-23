@@ -256,9 +256,15 @@ UPDATE products SET price = 7000 WHERE id = 37; -- Medias Chanel Collection
 UPDATE products SET price = 7000 WHERE id = 38; -- Medias Gucci Collection
 
 -- PERFUMES
+
+SELECT id, name, price
+FROM products;
 UPDATE products SET price = 30000 WHERE id = 39; -- Victoria Secret Garden View
 UPDATE products SET price = 65000 WHERE id = 40; -- Diesel 
-
+UPDATE products SET price = 65000 WHERE id = 41; -- Victoria Secret Garden View
+UPDATE products SET price = 65000 WHERE id = 42; -- Diesel 
+UPDATE products SET price = 65000 WHERE id = 43; -- Victoria Secret Garden View
+UPDATE products SET price = 65000 WHERE id = 44; -- Diesel 
 // Relojes
 UPDATE products SET price = 75000 WHERE id = 45; -- Reloj Casio Clásico Plateado
 UPDATE products SET price = 75000 WHERE id = 46; -- Reloj Casio Clásico Dorado
