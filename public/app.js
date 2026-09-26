@@ -42,19 +42,40 @@ function renderCategories() {
 }
 
 function renderProducts(products) {
-  $("#products").innerHTML = products.length ? products.map(p => `
-    <article class="product">
-      <div class="product-image">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
-        <button class="favorite">♡</button>
-      </div>
-      <h3>${p.name}</h3>
-      <div class="price">${money(p.price)}</div>
-      <button class="btn" onclick="addToCart(${p.id})" ${p.stock < 1 ? "disabled" : ""}>
-        ${p.stock < 1 ? "Agotado" : "Agregar al carrito"}
-      </button>
-    </article>
-  `).join("") : `<p>No encontramos productos con esa búsqueda.</p>`;
+  $("#products").innerHTML = products.length
+    ? products.map(p => `
+      <article class="product">
+        <div class="product-image">
+          ${p.image}
+          <button class="favorite">♡</button>
+        </div>
+
+        <h3>${p.name}</h3>
+
+        <div class="price">
+          ${money(p.price)}
+        </div>
+
+        <button
+          class="btn"
+          onclick="addToCart(${p.id})"
+          ${p.stock < 1 ? "disabled" : ""}
+        >
+          ${p.stock < 1 ? "Agotado" : "Agregar al carrito"}
+        </button>
+
+        ${p.category === "Camisas" ? `
+          }"
+            target="_blank"
+            class="btn"
+            style="margin-top:8px; display:block; text-align:center;"
+          >
+            🎨 Personalizar Camiseta
+          </a>
+        ` : ""}
+      </article>
+    `).join("")
+    : `<p>No encontramos productos con esa búsqueda.</p>`;
 }
 
 async function filterCategory(category) {
@@ -246,7 +267,7 @@ Quedo atenta a la confirmación. 💗`;
 });
 
 $("#whatsappButton").onclick = () => {
-  const phone = "573000000000";
+  const phone = "573008309863"; // Númer o de WhatsApp de la tienda
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(lastOrderMessage)}`, "_blank");
 };
 
