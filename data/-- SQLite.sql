@@ -284,3 +284,45 @@ WHERE id = 47;
 UPDATE products
 SET stock = 999
 WHERE id = 45;
+
+// Camisetas
+
+INSERT INTO products
+(category_id, name, description, price, stock, image, featured)
+VALUES
+
+(1,'Camiseta Paradise Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas1.jpeg',1),
+(1,'Camiseta Casual Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas2.jpeg',1),
+(1,'Camiseta Balmain Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas3.jpeg',1),
+(1,'Camiseta Gucci Bear','Camiseta estampada.',0,10,'/images/camisas/Camisas4.jpeg',1),
+(1,'Camiseta Snoopy Coach','Camiseta estampada.',0,10,'/images/camisas/Camisas5.jpeg',1),
+(1,'Camiseta Rodeo Texas','Camiseta estampada.',0,10,'/images/camisas/Camisas6.jpeg',1),
+(1,'Camiseta Pantone Style','Camiseta estampada.',0,10,'/images/camisas/Camisas7.jpeg',1),
+(1,'Camiseta Cat Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas8.jpeg',1),
+(1,'Camiseta Teddy Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas9.jpeg',1),
+(1,'Camiseta Casual Fashion','Camiseta estampada.',0,10,'/images/camisas/Camisas10.jpeg',1),
+(1,'Camiseta More Amor','Camiseta estampada.',0,10,'/images/camisas/Camisas11.jpeg',1),
+(1,'Camiseta Icon Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas12.jpeg',1),
+(1,'Camiseta Paris Matcha','Camiseta estampada.',0,10,'/images/camisas/Camisas13.jpeg',1),
+(1,'Camiseta Hello Kitty','Camiseta estampada.',0,10,'/images/camisas/Camisas14.jpeg',1),
+(1,'Camiseta Teddy Style','Camiseta estampada.',0,10,'/images/camisas/Camisas15.jpeg',1),
+(1,'Camiseta Summer Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas16.jpeg',1),
+(1,'Camiseta Pink Panther','Camiseta estampada.',0,10,'/images/camisas/Camisas17.jpeg',1),
+(1,'Camiseta Prada Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas18.jpeg',1),
+(1,'Camiseta University Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas19.jpeg',1),
+(1,'Camiseta Prada Milano','Camiseta estampada.',0,10,'/images/camisas/Camisas20.jpeg',1),
+(1,'Camiseta Diesel Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas21.jpeg',1),
+(1,'Camiseta Feline Style','Camiseta estampada.',0,10,'/images/camisas/Camisas22.jpeg',1),
+(1,'Camiseta Miu Miu Collection','Camiseta estampada.',0,10,'/images/camisas/Camisas23.jpeg',1),
+
+(1,'Personaliza tu Camiseta','Personaliza tu camiseta con tu nombre, frase o diseño favorito.',0,999,'/images/camisas/Camisas24.jpeg',1);
+
+SELECT id,name, price
+FROM products
+WHERE category_id = 1;
+
+UPDATE products SET price = 55000 WHERE id = 71; -- Diesel 
+
+UPDATE products
+SET price = 45000
+WHERE category_id = 1;
