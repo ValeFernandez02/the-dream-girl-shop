@@ -217,17 +217,28 @@ $("#checkoutForm").addEventListener("submit", async (e) => {
   }
 
   const deliveryText = data.needs_delivery
-    ? `Domicilio: ${data.address}, ${data.neighborhood}, ${data.city}`
-    : "Recogida / entrega acordada con la tienda";
+  ? `Domicilio: ${data.address}, ${data.neighborhood}, ${data.city}`
+  : "Recogida / entrega acordada con la tienda";
 
-  lastOrderMessage =
+const orderItems = state.cart.map(item => {
+  const product = state.products.find(p => p.id === item.product_id);
+  return `• ${product.name} x${item.quantity}`;
+}).join("\n");
+
+lastOrderMessage =
 `Hola, The Dream Girl Shop. Acabo de realizar el pedido #DG-${String(result.id).padStart(5, "0")}.
 
 Cliente: ${data.customer_name}
 Teléfono: ${data.phone}
+
+🛍 PRODUCTOS:
+${orderItems}
+
 ${deliveryText}
+
 Fecha del pedido: ${data.order_date}
 Fecha de entrega: ${data.delivery_date || "Por confirmar"}
+
 Total: ${money(result.total)}
 
 Quedo atenta a la confirmación. 💗`;
